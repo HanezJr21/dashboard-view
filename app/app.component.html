@@ -1,0 +1,44 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    autoFocus
+    fixedInViewport
+    mode="over"
+    position="end"
+    [opened]="opened"
+    (closed)="handleClosed()"
+  >
+    <div #sidenavContentContainer></div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <table>
+      <td>
+        <button mat-flat-button color="primary" (click)="openSidenav()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </td>
+      <td><h2>CANVAS</h2></td>
+    </table>
+    <table>
+      <td>
+        <mat-card>
+          <mat-card-title>Simulation Result</mat-card-title>
+        </mat-card>
+      </td>
+      <td>
+        <mat-card>
+          <mat-card-title>Statistic Result</mat-card-title>
+        </mat-card>
+      </td>
+      <td>
+        <mat-card>
+          <mat-card-title>Data Distribution</mat-card-title>
+        </mat-card>
+      </td>
+      <td>
+        <mat-card>
+          <mat-card-title>Monitoring</mat-card-title>
+        </mat-card>
+      </td>
+    </table>
+  </mat-sidenav-content>
+</mat-sidenav-container>
