@@ -3,7 +3,7 @@
     autoFocus
     fixedInViewport
     mode="over"
-    position="end"
+    position="start"
     [opened]="opened"
     (closed)="handleClosed()"
   >
@@ -11,34 +11,49 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <table>
-      <td>
-        <button mat-flat-button color="primary" (click)="openSidenav()">
-          <mat-icon>menu</mat-icon>
-        </button>
-      </td>
-      <td><h2>CANVAS</h2></td>
-    </table>
-    <table>
-      <td>
-        <mat-card>
-          <mat-card-title>Simulation Result</mat-card-title>
-        </mat-card>
-      </td>
-      <td>
-        <mat-card>
-          <mat-card-title>Statistic Result</mat-card-title>
-        </mat-card>
-      </td>
-      <td>
-        <mat-card>
-          <mat-card-title>Data Distribution</mat-card-title>
-        </mat-card>
-      </td>
-      <td>
-        <mat-card>
-          <mat-card-title>Monitoring</mat-card-title>
-        </mat-card>
-      </td>
+      <tr>
+        <td>
+          <button mat-flat-button color="primary" (click)="openSidenav()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </td>
+        <td><h2>SMART ANALYSIS</h2></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <mat-tab-group>
+            <mat-tab label="Profitability Graph">
+              <img
+                src="https://ip.bitcointalk.org/?u=http%3A%2F%2Fdivananalit.org%2Fgraphs%2Flitecoin-mining-cost.png&t=625&c=INKzoierg-Bs8A"
+                width="1000"
+                height="450"
+              />
+            </mat-tab>
+            <mat-tab label="Profitability Report">
+              <img
+                src="https://ip.bitcointalk.org/?u=http%3A%2F%2Fdivananalit.org%2Fgraphs%2Flitecoin-mining-cost.png&t=625&c=INKzoierg-Bs8A"
+                width="1000"
+                height="450"
+              />
+            </mat-tab>
+            <mat-tab label="Cost Simulation">
+              <img
+                src="https://ip.bitcointalk.org/?u=http%3A%2F%2Fdivananalit.org%2Fgraphs%2Flitecoin-mining-cost.png&t=625&c=INKzoierg-Bs8A"
+                width="1000"
+                height="450"
+              />
+            </mat-tab>
+            <mat-tab label="Barge Analysis">
+              <img
+                src="https://ip.bitcointalk.org/?u=http%3A%2F%2Fdivananalit.org%2Fgraphs%2Flitecoin-mining-cost.png&t=625&c=INKzoierg-Bs8A"
+                width="1000"
+                height="450"
+              />
+            </mat-tab>
+          </mat-tab-group>
+        </td>
+      </tr>
     </table>
   </mat-sidenav-content>
 </mat-sidenav-container>
