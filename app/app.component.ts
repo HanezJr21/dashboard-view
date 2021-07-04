@@ -9,6 +9,7 @@ import {
 import { MatSidenav } from '@angular/material/sidenav';
 
 import { SidenavContentComponent } from './sidenav-content/sidenav-content.component';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'material-app',

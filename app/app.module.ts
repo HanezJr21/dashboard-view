@@ -54,7 +54,7 @@ import {
 } from '@angular/material';
 import { AppComponent } from './app.component';
 import { SidenavContentComponent } from './sidenav-content/sidenav-content.component';
-
+import { LoginComponent } from './login/login.component';
 /**
  * NgModule that includes all Material modules that are required to serve the app.
  */
@@ -122,7 +122,7 @@ export class MaterialModule {}
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
-  declarations: [AppComponent, SidenavContentComponent],
+  declarations: [AppComponent, SidenavContentComponent, LoginComponent],
   bootstrap: [AppComponent],
   entryComponents: [SidenavContentComponent],
   providers: []
