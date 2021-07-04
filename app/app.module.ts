@@ -131,7 +131,14 @@ export class MaterialModule {}
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
-    appRoutingModule
+    appRoutingModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatSliderModule,
+    MatInputModule
   ],
   declarations: [
     AppComponent,
