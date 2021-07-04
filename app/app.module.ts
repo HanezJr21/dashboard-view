@@ -123,16 +123,30 @@ export class MaterialModule {}
 @NgModule({
   imports: [
     BrowserModule,
-    CommonModule,
-    MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CommonModule,
+    HttpClientModule,
+    appRoutingModule
   ],
-  declarations: [AppComponent, SidenavContentComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    SidenavContentComponent,
+    AlertComponent
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent],
-  entryComponents: [SidenavContentComponent],
-  providers: []
+  entryComponents: [SidenavContentComponent]
 })
 export class AppModule {}
 
