@@ -2,6 +2,10 @@
   font-size: 8px;
 }
 
+.mat-input-title {
+  font-size: 12px;
+}
+
 .main-bg {
   background: rgba(0, 151, 167, 255);
   margin: 3px;

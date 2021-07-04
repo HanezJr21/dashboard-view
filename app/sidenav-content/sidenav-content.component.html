@@ -2,316 +2,187 @@
   <mat-accordion>
     <h4><b>PARAMETER</b></h4>
     <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        General Configuration
-      </mat-expansion-panel-header>
+      <mat-expansion-panel-header class="mat-input-title">Simulation Filter</mat-expansion-panel-header>
       <table>
         <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Simulation Name</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
+          <mat-label class="mat-input-wrapper">Date From</mat-label>
           <mat-form-field class="mat-input-wrapper" appearance="fill">
             <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker" />
-            <mat-datepicker-toggle
-              matSuffix
-              [for]="picker"
-            ></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput [matDatepicker]="dateFrom" />
+            <mat-datepicker-toggle matSuffix [for]="dateFrom"></mat-datepicker-toggle>
+            <mat-datepicker #dateFrom></mat-datepicker>
           </mat-form-field>
         </tr>
         <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Simulation By</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>General Parameter</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Simulation Number</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <button class="mat-input-wrapper" mat-raised-button color="primary">
-            Update parameter input data
-          </button>
-        </tr>
-      </table>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>Cargo Plan</mat-expansion-panel-header>
-      <table>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Simulation Number</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
+          <mat-label class="mat-input-wrapper">Date To</mat-label>
           <mat-form-field class="mat-input-wrapper" appearance="fill">
             <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker2" />
-            <mat-datepicker-toggle
-              matSuffix
-              [for]="picker2"
-            ></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput [matDatepicker]="dateTo" />
+            <mat-datepicker-toggle matSuffix [for]="dateTo"></mat-datepicker-toggle>
+            <mat-datepicker #dateTo></mat-datepicker>
           </mat-form-field>
         </tr>
+        <tr></tr>
         <tr>
+          <mat-label class="mat-input-wrapper">Simulation ID</mat-label>
           <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Cargo Plan</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Demurrage</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Despatch</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <section class="example-section">
-            <mat-checkbox class="mat-input-wrapper">GR</mat-checkbox>&nbsp;
-            <mat-checkbox class="mat-input-wrapper">GL</mat-checkbox>
-          </section>
-        </tr>
-        <tr>
-          <button class="mat-input-wrapper" mat-raised-button color="primary">
-            Add New
-          </button>
-        </tr>
-      </table>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>MV Parameter</mat-expansion-panel-header>
-      <table>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Available Quantity</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Productivity (Loading Rate)</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-label class="mat-input-wrapper">Loading Vessel Target</mat-label>
-        </tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Gearless</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Geared</mat-label>
-            <input matInput />
+            <mat-label>1204865970287</mat-label>
+            <input [disabled]=true matInput />
           </mat-form-field>
         </tr>
         <tr>
           <button class="mat-input-wrapper" mat-raised-button color="primary">
-            Save
+            Search
           </button>
         </tr>
       </table>
     </mat-expansion-panel>
-
     <mat-expansion-panel>
-      <mat-expansion-panel-header>Barge Parameter</mat-expansion-panel-header>
+      <mat-expansion-panel-header class="mat-input-title">Simulation Run</mat-expansion-panel-header>
       <table>
         <tr>
-          <mat-label class="mat-input-wrapper"><b>To Vessel</b></mat-label>
+          <mat-label class="mat-input-wrapper">Market Price</mat-label>
         </tr>
         <tr>
-          <mat-label class="mat-input-wrapper">Available Quantity</mat-label>
+          <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="1" min="0" max="150"
+            aria-label="units"></mat-slider>
         </tr>
         <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Time Charter</mat-label>
-            <input matInput />
-          </mat-form-field>
+          <mat-label class="mat-input-wrapper">Barge Availability</mat-label>
         </tr>
         <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Freigh Charter</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr></tr>
-        <tr>
-          <mat-label class="mat-input-wrapper">Capacity</mat-label>
-        </tr>
-        <tr></tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Ton per Barge</mat-label>
-            <input matInput />
-          </mat-form-field>
+          <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="1" min="0" max="50"
+            aria-label="units"></mat-slider>
         </tr>
         <tr>
-          <mat-label class="mat-input-wrapper"
-            >Average Barge Target (Daily)</mat-label
-          >
-        </tr>
-        <tr></tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Barge per Day</mat-label>
-            <input matInput />
-          </mat-form-field>
+          <mat-label class="mat-input-wrapper">Floating Crane Capacity</mat-label>
         </tr>
         <tr>
-          <mat-label class="mat-input-wrapper"><b>Direct</b></mat-label>
+          <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="1" min="0" max="10000"
+            aria-label="units"></mat-slider>
         </tr>
         <tr>
-          <mat-label class="mat-input-wrapper">Available Quantity</mat-label>
+          <mat-label class="mat-input-wrapper">Laytime Delay</mat-label>
         </tr>
         <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr></tr>
-        <tr>
-          <mat-label class="mat-input-wrapper">Capacity</mat-label>
-        </tr>
-        <tr></tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Ton per Barge</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-label class="mat-input-wrapper"
-            >Average Barge Target (Daily)</mat-label
-          >
-        </tr>
-        <tr></tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Barge per Day</mat-label>
-            <input matInput />
-          </mat-form-field>
+          <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="1" min="0" max="50"
+            aria-label="units"></mat-slider>
         </tr>
         <tr>
           <button class="mat-input-wrapper" mat-raised-button color="primary">
-            Save
+            Run Simulation
           </button>
         </tr>
       </table>
     </mat-expansion-panel>
-
     <mat-expansion-panel>
-      <mat-expansion-panel-header>Port Parameter</mat-expansion-panel-header>
+      <mat-expansion-panel-header class="mat-input-title">Parameter</mat-expansion-panel-header>
       <table>
+        <tr>
+          <mat-label class="mat-input-wrapper">Vessel</mat-label>
+        </tr>
+        <tr>
+          <mat-form-field class="mat-input-wrapper" appearance="fill">
+            <mat-label>Select Vessel</mat-label>
+            <select matNativeControl required>
+              <option value="bunati">Basic Portland</option>
+              <option value="bunati">BAO Grand</option>
+              <option value="bunati">Manalagi Hita</option>
+              <option value="bunati">SEA Express</option>
+              <option value="bunati">Long Shan Hu</option>
+              <option value="bunati">Jin Hae He</option>
+            </select>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-label class="mat-input-wrapper">Barge</mat-label>
+        </tr>
+        <tr>
+          <mat-form-field class="mat-input-wrapper" appearance="fill">
+            <mat-label>Select Barge</mat-label>
+            <select matNativeControl required>
+            <option value="bunati">Barge Carrying Liquid Cargo</option>
+            <option value="bunati">Barrack Barge</option>
+            <option value="bunati">Car Float Barge</option>
+            <option value="bunati">Dry Bulk Cargo Barge</option>
+            <option value="bunati">Royal Barge</option>
+            <option value="bunati">Split Hopper Barge</option>
+          </select>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-label class="mat-input-wrapper">Port</mat-label>
+        </tr>
         <tr>
           <mat-form-field class="mat-input-wrapper" appearance="fill">
             <mat-label>Select Port</mat-label>
             <select matNativeControl required>
               <option value="bunati">Bunati</option>
+              <option value="bunati">Illaga</option>
+              <option value="bunati">Jatibarang</option>
+              <option value="bunati">Kalabahi</option>
+              <option value="bunati">Larantuka</option>
             </select>
           </mat-form-field>
         </tr>
         <tr>
-          <mat-label class="mat-input-wrapper">Hauling</mat-label>
-        </tr>
-        <tr></tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Ton</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-label class="mat-input-wrapper">Stockpile</mat-label>
-        </tr>
-        <tr></tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>East (Ton)</mat-label>
-            <input matInput />
-          </mat-form-field>
+          <mat-label class="mat-input-wrapper">Floating Crane</mat-label>
         </tr>
         <tr>
           <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>West (Ton)</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-label class="mat-input-wrapper"
-            >Loading Rate (max 8400)</mat-label
-          >
-        </tr>
-        <tr></tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>TPH</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-label class="mat-input-wrapper"
-            >Crushing Rate (max 6700)</mat-label
-          >
-        </tr>
-        <tr></tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>TPH</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-label class="mat-input-wrapper">Loaded Barge</mat-label>
-        </tr>
-        <tr></tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Barge per Day</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Transhipment</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </tr>
-        <tr>
-          <mat-form-field class="mat-input-wrapper" appearance="fill">
-            <mat-label>Direct</mat-label>
-            <input matInput />
+            <mat-label>Select Floating Crane</mat-label>
+            <select matNativeControl required>
+            <option value="bunati">Huisman</option>
+            <option value="bunati">Liebherr</option>
+            <option value="bunati">Konecranes</option>
+          </select>
           </mat-form-field>
         </tr>
         <tr>
           <button class="mat-input-wrapper" mat-raised-button color="primary">
-            Add New
+            Search
           </button>
+        </tr>
+      </table>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="mat-input-title">Prediction</mat-expansion-panel-header>
+      <table>
+        <tr>
+          <mat-label class="mat-input-wrapper">Market Price</mat-label>
+        </tr>
+        <tr>
+          <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="1" min="0" max="150"
+            aria-label="units"></mat-slider>
+        </tr>
+        <tr>
+          <mat-label class="mat-input-wrapper">Weater</mat-label>
+        </tr>
+        <tr>
+          <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" step="1" min="0" max="150"
+            aria-label="units"></mat-slider>
+        </tr>
+        <tr>
+          <button class="mat-input-wrapper" mat-raised-button color="primary">
+            Search
+          </button>
+        </tr>
+      </table>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="mat-input-title">Admin</mat-expansion-panel-header>
+      <table>
+        <tr>
+          <mat-label class="mat-input-wrapper">User</mat-label>
+        </tr>
+        <tr>
+          <mat-label class="mat-input-wrapper">Role</mat-label>
+        </tr>
+        <tr>
+          <mat-label class="mat-input-wrapper">Group</mat-label>
+        </tr>
+        <tr>
+          <mat-label class="mat-input-wrapper">Settings</mat-label>
         </tr>
       </table>
     </mat-expansion-panel>
