@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { AlertComponent } from './_components';
 import { fakeBackendProvider } from './_helpers';
 import { appRoutingModule } from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
