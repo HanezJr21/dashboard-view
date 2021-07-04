@@ -137,6 +137,7 @@ export class MaterialModule {}
     MatTabsModule,
     MatExpansionModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatSliderModule,
     MatInputModule
   ],
