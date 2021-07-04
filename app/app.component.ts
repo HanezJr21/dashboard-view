@@ -1,58 +1,24 @@
-import {
-  Component,
-  ComponentFactoryResolver,
-  ComponentRef,
-  ElementRef,
-  ViewChild,
-  ViewContainerRef
-} from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { SidenavContentComponent } from './sidenav-content/sidenav-content.component';
+import { AuthenticationService } from './_services';
+import { User } from './_models';
 
-@Component({
-  selector: 'material-app',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
-})
+@Component({ selector: 'app', templateUrl: 'app.component.html' })
 export class AppComponent {
-  opened = false;
+  currentUser: User;
 
-  private sidenavContentComponentRef: ComponentRef<SidenavContentComponent>;
-
-  @ViewChild(MatSidenav, { static: true })
-  private sidenav: MatSidenav;
-
-  @ViewChild('sidenavContentContainer', {
-    read: ViewContainerRef,
-    static: false
-  })
-  private sidenavContentContainer: ViewContainerRef;
-
-  constructor(private resolver: ComponentFactoryResolver) {}
-
-  openSidenav(): void {
-    const factory = this.resolver.resolveComponentFactory(
-      SidenavContentComponent
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) {
+    this.authenticationService.currentUser.subscribe(
+      x => (this.currentUser = x)
     );
-    this.sidenavContentContainer.clear();
-
-    this.sidenavContentComponentRef = this.sidenavContentContainer.createComponent(
-      factory,
-      0
-    );
-
-    this.opened = true;
   }
 
-  handleClosed(): void {
-    this.opened = false;
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 }
-
-/**
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */

@@ -1,54 +1,30 @@
-<mat-sidenav-container>
-  <mat-sidenav autoFocus fixedInViewport mode="over" position="start" [opened]="opened" (closed)="handleClosed()">
-    <div #sidenavContentContainer></div>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <table>
-      <tr>
-        <td>
-          <button mat-flat-button color="primary" (click)="openSidenav()">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </td>
-        <td>
-          <h2>SMART ANALYSIS</h2>
-        </td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-          <mat-tab-group>
-            <mat-tab label="Profitability Graph">
-              <img
-                src="https://ip.bitcointalk.org/?u=http%3A%2F%2Fdivananalit.org%2Fgraphs%2Flitecoin-mining-cost.png&t=625&c=INKzoierg-Bs8A"
-                width="1000"
-                height="450"
-              />
-            </mat-tab>
-            <mat-tab label="Profitability Report">
-              <img
-                src="https://www.researchgate.net/profile/Roman-Sperka/publication/283477932/figure/fig2/AS:670720484982797@1536923633373/Multi-agent-simulation-The-generation-values-graph-AVG-Gross-Profit-monthly-Source.png"
-                width="1000"
-                height="450"
-              />
-            </mat-tab>
-            <mat-tab label="Cost Simulation">
-              <img
-                src="https://i2.wp.com/www.gleeym.com/wp-content/uploads/2021/02/Cost.png?fit=800%2C517&ssl=1"
-                width="1000"
-                height="450"
-              />
-            </mat-tab>
-            <mat-tab label="Barge Analysis">
-              <img
-                src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs41072-019-0044-7/MediaObjects/41072_2019_44_Fig8_HTML.png"
-                width="1000"
-                height="450"
-              />
-            </mat-tab>
-          </mat-tab-group>
-        </td>
-      </tr>
-    </table>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/">Home</a>
+    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <alert></alert>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- credits -->
+<div class="text-center">
+  <p>
+    <a href="https://jasonwatmore.com/post/2019/06/10/angular-8-user-registration-and-login-example-tutorial"
+      target="_top">Angular 8 - User Registration and Login Example & Tutorial</a>
+  </p>
+  <p>
+    <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
+  </p>
+</div>
