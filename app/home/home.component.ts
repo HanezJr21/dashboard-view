@@ -4,7 +4,7 @@ import { first } from 'rxjs/operators';
 import { User } from '../_models';
 import { UserService, AuthenticationService } from '../_services';
 
-import { ConfigService } from '../home/config.service';
+import { ConfigService } from '../config.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import {
