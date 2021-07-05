@@ -21,92 +21,107 @@
                     <mat-tab-group>
                         <mat-tab label="Profitability Graph">
                             <mat-accordion>
-                                <mat-card>
-                                    <img src="https://www.linkpicture.com/q/Amount-Optimised-Barge-Loading-Simulations.png" width="1100" height="450"/>
-                                </mat-card>
-                            </mat-accordion>
-                            <mat-accordion>
-                                <mat-card>
-                                    <img src="https://www.linkpicture.com/q/Quantity-Optimised-Barge-Loading-Simulations.png" width="1100" height="450"/>
-                                </mat-card>
-                            </mat-accordion>
-                        </mat-tab>
-                        <mat-tab label="Profitability Report">
-                            <mat-accordion>
-                                <mat-card>
-                                    <img src="https://www.linkpicture.com/q/newplot-1_2.png" width="1100" height="450"/>
-                                </mat-card>
-                            </mat-accordion>
-                            <mat-accordion>
-                                <mat-card>
-                                    <img src="https://www.linkpicture.com/q/newplot-1.png" width="1100" height="450"/>
-                                </mat-card>
-                            </mat-accordion>
-                            <mat-accordion>
-                                <mat-card>
-                                    <img src="https://www.linkpicture.com/q/Avg.of-stock_level-by-date-and-port-2.png" width="1100" height="450"/>
-                                </mat-card>
-                            </mat-accordion>
-
-                        </mat-tab>
-                        <mat-tab label="Cost Simulation">
-                            <mat-accordion>
-                                <mat-card>
-                                    <img src="https://www.linkpicture.com/q/contract-and-simulation-cost-comparison.png" width="1100" height="450"/>
-                                </mat-card>
-                            </mat-accordion>
-                            <mat-accordion>
-                                <mat-card>
-                                    <img src="https://www.linkpicture.com/q/Avg.of-stock_level-by-date-and-port_1.png" width="1100" height="450"/>
-                                </mat-card>
-                            </mat-accordion>
-                        </mat-tab>
-                        <mat-tab label="Barge Analysis">
-
-                            <mat-accordion>
-                                <mat-card>
-                                    <img src="https://www.linkpicture.com/q/barge.png" width="1100" height="500"/>
-                                </mat-card>
-                            </mat-accordion>
-                            <mat-accordion>
-                                <mat-card>
-                                    <img src="https://www.linkpicture.com/q/newplot-3.png" width="1100" height="500"/>
-                                </mat-card>
-                            </mat-accordion>
-                            <mat-accordion>
                 <td>
                     <mat-card>
-                        <img src="https://www.linkpicture.com/q/Barge-Cost-and-Trips-Analysis-for-Each-Combinations.png" width="350" height="250"/>
+                        <img src="https://www.linkpicture.com/q/Amount-Optimised-Barge-Loading-Simulations.png" width="525" height="450"/>
                     </mat-card>
                 </td>
                 <td>
                     <mat-card>
-                        <img src="https://www.linkpicture.com/q/Barge-Loading-Cost-by-Project.png" width="340" height="250"/>
-                    </mat-card>
-                </td>
-                <td>
-                    <mat-card>
-                        <img src="https://www.linkpicture.com/q/Barge-Loading-Cost-vs-Max-Trip-Analysis.png" width="340" height="250"/>
+                        <img src="https://www.linkpicture.com/q/Amount-Optimised-Barge-Loading-Simulations.png" width="525" height="450"/>
                     </mat-card>
                 </td>
                 </mat-accordion>
                 </mat-tab>
-                <mat-tab label="Monitoring">
-            <tr>&nbsp;</tr>
+                <mat-tab label="Profitability Report">
+                    <mat-accordion>
             <tr>
+                <td>
+                    <mat-card>
+                        <img src="https://www.linkpicture.com/q/newplot-1_2.png" width="525" height="150"/>
+                    </mat-card>
+                </td>
+                <td>
+                    <mat-card>
+                        <img src="https://www.linkpicture.com/q/newplot_1.png" width="525" height="150"/>
+                    </mat-card>
+                </td>
+            </tr>
+            </mat-accordion>
+
+            <mat-accordion>
+                <mat-card>
+                    <img src="https://www.linkpicture.com/q/Avg.of-stock_level-by-date-and-port-2.png" width="1100" height="300"/>
+                </mat-card>
+            </mat-accordion>
+
+            </mat-tab>
+            <mat-tab label="Cost Simulation">
+                <mat-accordion>
+                    <mat-card>
+                        <img src="https://www.linkpicture.com/q/contract-and-simulation-cost-comparison.png" width="1100" height="450"/>
+                    </mat-card>
+                </mat-accordion>
+            </mat-tab>
+            <mat-tab label="Stok Analysis">>
+                <mat-accordion>
+                    <mat-card>
+                        <img src="https://www.linkpicture.com/q/Avg.of-stock_level-by-date-and-port_1.png" width="1100" height="450"/>
+                    </mat-card>
+                </mat-accordion>
+            </mat-tab>
+            <mat-tab label="Barge Analysis">
 
                 <mat-accordion>
                     <mat-card>
-                        <mat-form-field class="mat-input-wrapper" appearance="fill"
-                            (change)="onChange($event.target.value)">
-                            <select matNativeControl required>
-                            <option *ngFor="let country of countries"  [value]="country.id">{{country.name}}</option>
-                            </select>
-                        </mat-form-field>
-                        <img src="{{url}}" width="1100" height="500"/>
+                        <img (click)="onClick($event.target.value)" src="{{urlBarge}}" width="1100" height="450"/>
                     </mat-card>
                 </mat-accordion>
-            </tr>
+            </mat-tab>
+            <mat-tab label="Barge Cost Analysis">
+                <mat-accordion>
+                    <tr>
+                        <td>
+                            <mat-card>
+                                <img src="https://www.linkpicture.com/q/Barge-Cost-and-Trips-Analysis-for-Each-Combinations.png" width="550" height="225"/>
+                            </mat-card>
+                        </td>
+                        <td>
+                            <mat-card>
+                                <img src="https://www.linkpicture.com/q/Barge-Loading-Cost-by-Project.png" width="550" height="225"/>
+                            </mat-card>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-card>
+                                <img src="https://www.linkpicture.com/q/Barge-Loading-Cost-vs-Max-Trip-Analysis.png" width="550" height="225"/>
+                            </mat-card>
+                        </td>
+                        <td>
+                            <mat-card>
+                                <img src="https://www.linkpicture.com/q/Barge-Cost-Analysis.png" width="550" height="225"/>
+                            </mat-card>
+                        </td>
+                    </tr>
+                </mat-accordion>
+            </mat-tab>
+            <mat-tab label="Monitoring">
+                <tr>&nbsp;</tr>
+                <tr>
+
+                    <mat-accordion>
+                        <mat-card>
+                            <mat-form-field class="mat-input-title" appearance="fill"
+                                (change)="onChange($event.target.value)">
+                                <select matNativeControl required>
+                            <option *ngFor="let country of countries"  [value]="country.id">{{country.name}}</option>
+                            </select>
+                            </mat-form-field>
+                            <img src="{{url}}" width="1100" height="500"/>
+                        </mat-card>
+                    </mat-accordion>
+                </tr>
             </mat-tab>
             </mat-tab-group>
             </td>

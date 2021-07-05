@@ -103,4 +103,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   onChange(deviceValue) {
     this.url = this.countries.filter(x => x.id == deviceValue)[0].url;
   }
+
+  urlBarge = 'https://www.linkpicture.com/q/barge.png';
+  urlBarge1 = 'https://www.linkpicture.com/q/barge.png';
+  urlBarge2 = 'https://www.linkpicture.com/q/newplot-3.png';
+  onClick(deviceValue) {
+    if (this.urlBarge == this.urlBarge1) {
+      this.urlBarge = this.urlBarge2;
+    } else {
+      this.urlBarge = this.urlBarge1;
+    }
+  }
 }
