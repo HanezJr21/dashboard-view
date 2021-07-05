@@ -139,6 +139,7 @@ export class MaterialModule {}
     MatDatepickerModule,
     MatNativeDateModule,
     MatSliderModule,
+    MatCardModule,
     MatInputModule
   ],
   declarations: [

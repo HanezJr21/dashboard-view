@@ -2,11 +2,7 @@ import { Subscription } from 'rxjs';
 import { first } from 'rxjs/operators';
 
 import { User } from '../_models';
-import { UserService, AuthenticationService } from '../_services';
-
-import { ConfigService } from '../config.service';
-import { DomSanitizer } from '@angular/platform-browser';
-
+import { AuthenticationService } from '../_services';
 import {
   Component,
   OnInit,
@@ -28,7 +24,7 @@ import { SidenavContentComponent } from '../sidenav-content/sidenav-content.comp
 })
 export class HomeComponent implements OnInit, OnDestroy {
   opened = false;
-
+  user: User;
   private sidenavContentComponentRef: ComponentRef<SidenavContentComponent>;
 
   @ViewChild(MatSidenav, { static: true })
@@ -40,22 +36,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   })
   private sidenavContentContainer: ViewContainerRef;
 
-  currentUser: User;
-  currentUserSubscription: Subscription;
-  users: User[] = [];
-
   constructor(
     private authenticationService: AuthenticationService,
-    private userService: UserService,
-    private resolver: ComponentFactoryResolver,
-    private imageService: ConfigService,
-    private sanitizer: DomSanitizer
+    private resolver: ComponentFactoryResolver
   ) {
-    this.currentUserSubscription = this.authenticationService.currentUser.subscribe(
-      user => {
-        this.currentUser = user;
-      }
-    );
+    this.user = this.authenticationService.currentUserValue;
   }
 
   openSidenav(): void {
@@ -76,38 +61,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.opened = false;
   }
 
-  ngOnInit() {
-    this.loadAllUsers();
-    this.imageService.getData().subscribe((baseImage: any) => {
-      let objectURL = baseImage.image;
+  ngOnInit() {}
 
-      this.thumbnail = objectURL;
-    });
-  }
-
-  ngOnDestroy() {
-    // unsubscribe to ensure no memory leaks
-    this.currentUserSubscription.unsubscribe();
-  }
-
-  deleteUser(id: number) {
-    this.userService
-      .delete(id)
-      .pipe(first())
-      .subscribe(() => {
-        this.loadAllUsers();
-      });
-  }
-
-  private loadAllUsers() {
-    this.userService
-      .getAll()
-      .pipe(first())
-      .subscribe(users => {
-        this.users = users;
-      });
-  }
-
-  name = 'Test display image';
-  thumbnail: any;
+  ngOnDestroy() {}
 }
