@@ -7,8 +7,8 @@
             <tr>
                 <td>
                     <button mat-flat-button color="primary" (click)="openSidenav()">
-          <mat-icon>menu</mat-icon>
-        </button>
+                        <mat-icon>menu</mat-icon>
+                    </button>
                 </td>
                 <td>
                     <h2>SMART ANALYSIS</h2>
@@ -65,12 +65,12 @@
 
                             <mat-accordion>
                                 <mat-card>
-                                    <img src="https://www.linkpicture.com/q/barge.png" width="1125" height="500"/>
+                                    <img src="https://www.linkpicture.com/q/barge.png" width="1100" height="500"/>
                                 </mat-card>
                             </mat-accordion>
                             <mat-accordion>
                                 <mat-card>
-                                    <img src="https://www.linkpicture.com/q/newplot-3.png" width="1125" height="500"/>
+                                    <img src="https://www.linkpicture.com/q/newplot-3.png" width="1100" height="500"/>
                                 </mat-card>
                             </mat-accordion>
                             <mat-accordion>
@@ -81,18 +81,35 @@
                 </td>
                 <td>
                     <mat-card>
-                        <img src="https://www.linkpicture.com/q/Barge-Loading-Cost-by-Project.png" width="350" height="250"/>
+                        <img src="https://www.linkpicture.com/q/Barge-Loading-Cost-by-Project.png" width="340" height="250"/>
                     </mat-card>
                 </td>
                 <td>
                     <mat-card>
-                        <img src="https://www.linkpicture.com/q/Barge-Loading-Cost-vs-Max-Trip-Analysis.png" width="350" height="250"/>
+                        <img src="https://www.linkpicture.com/q/Barge-Loading-Cost-vs-Max-Trip-Analysis.png" width="340" height="250"/>
                     </mat-card>
                 </td>
                 </mat-accordion>
                 </mat-tab>
-                </mat-tab-group>
-                </td>
+                <mat-tab label="Monitoring">
+            <tr>&nbsp;</tr>
+            <tr>
+
+                <mat-accordion>
+                    <mat-card>
+                        <mat-form-field class="mat-input-wrapper" appearance="fill"
+                            (change)="onChange($event.target.value)">
+                            <select matNativeControl required>
+                            <option *ngFor="let country of countries"  [value]="country.id">{{country.name}}</option>
+                            </select>
+                        </mat-form-field>
+                        <img src="{{url}}" width="1100" height="500"/>
+                    </mat-card>
+                </mat-accordion>
+            </tr>
+            </mat-tab>
+            </mat-tab-group>
+            </td>
             </tr>
         </table>
     </mat-sidenav-content>

@@ -64,4 +64,43 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {}
 
   ngOnDestroy() {}
+
+  url = 'https://www.linkpicture.com/q/1_525.png';
+
+  countries = [
+    {
+      id: 1,
+      name: 'Basic Portland',
+      url: 'https://www.linkpicture.com/q/1_525.png'
+    },
+    {
+      id: 2,
+      name: 'BAO Grand',
+      url: 'https://www.linkpicture.com/q/2_338.png'
+    },
+    {
+      id: 3,
+      name: 'Manalagi Hita',
+      url: 'https://www.linkpicture.com/q/3_230.png'
+    },
+    {
+      id: 4,
+      name: 'SEA Express',
+      url: 'https://www.linkpicture.com/q/1_525.png'
+    },
+    {
+      id: 5,
+      name: 'Long Shan Hu',
+      url: 'https://www.linkpicture.com/q/2_338.png'
+    },
+    {
+      id: 6,
+      name: 'Jin Hae He',
+      url: 'https://www.linkpicture.com/q/3_230.png'
+    }
+  ];
+
+  onChange(deviceValue) {
+    this.url = this.countries.filter(x => x.id == deviceValue)[0].url;
+  }
 }
