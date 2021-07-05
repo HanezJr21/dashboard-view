@@ -4,6 +4,9 @@ import { first } from 'rxjs/operators';
 import { User } from '../_models';
 import { UserService, AuthenticationService } from '../_services';
 
+import { ConfigService } from '../home/config.service';
+import { DomSanitizer } from '@angular/platform-browser';
+
 import {
   Component,
   OnInit,
@@ -44,7 +47,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
-    private resolver: ComponentFactoryResolver
+    private resolver: ComponentFactoryResolver,
+    private imageService: ConfigService,
+    private sanitizer: DomSanitizer
   ) {
     this.currentUserSubscription = this.authenticationService.currentUser.subscribe(
       user => {
@@ -73,6 +78,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.loadAllUsers();
+    this.imageService.getData().subscribe((baseImage: any) => {
+      let objectURL = baseImage.image;
+
+      this.thumbnail = objectURL;
+    });
   }
 
   ngOnDestroy() {
@@ -97,4 +107,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.users = users;
       });
   }
+
+  name = 'Test display image';
+  thumbnail: any;
 }
