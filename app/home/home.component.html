@@ -109,19 +109,46 @@
             <mat-tab label="Monitoring">
                 <tr>&nbsp;</tr>
                 <tr>
-
-                    <mat-accordion>
-                        <mat-card>
-                            <mat-form-field class="mat-input-title" appearance="fill"
-                                (change)="onChange($event.target.value)">
-                                <select matNativeControl required>
+                    <mat-form-field class="mat-input-title" appearance="fill" (change)="onChange($event.target.value)">
+                        <select matNativeControl required>
                             <option *ngFor="let country of countries"  [value]="country.id">{{country.name}}</option>
                             </select>
-                            </mat-form-field>
-                            <img src="{{url}}" width="1100" height="500"/>
-                        </mat-card>
-                    </mat-accordion>
+                    </mat-form-field>
+
                 </tr>
+                <tr>
+                    <td class="mat-input-title">Demurrage/ Despatch</td>
+                    <td class="mat-input-title"> :</td>
+                    <td class="mat-input-title">{{despatch}}</td>
+                </tr>
+                <tr>
+                    <td class="mat-input-title">Total Profitability</td>
+                    <td class="mat-input-title"> :</td>
+                    <td class="mat-input-title">{{profit}}</td>
+                </tr>
+                <tr>
+                    <td class="mat-input-title">Date</td>
+                    <td class="mat-input-title"> :</td>
+                    <td class="mat-input-title">21 May 2021</td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th class="mat-input-title">Tug / Barge</th>
+                            <th class="mat-input-title">COB Target</th>
+                            <th class="mat-input-title">Discharge Time Target</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let astronaut of bargelist">
+                            <td class="mat-input-title">{{astronaut.tug}}</td>
+                            <td class="mat-input-title">{{astronaut.cob}}</td>
+                            <td class="mat-input-title">{{astronaut.target}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </mat-tab>
             </mat-tab-group>
             </td>
